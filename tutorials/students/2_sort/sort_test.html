@@ -17,14 +17,33 @@
     
     <script type="text/javascript">
       function generateStandardArray() {
-        return [104, 17, 9, 15, 24, 73, 105, 87, 47, 42, 1];
+        return [23, 17, 53, 29, 47, 19, 91, 73, 71, 5, 13];
       }
       function testValidBubbleSort() {
         // TODO fill in test
+        var iterations = [
+        	[17,23,29,47,19,53,73,71,5,13,91]
+			//[1,9,15,17,24,42,47,73,87,104,105]
+        ];     
+        var arr = generateStandardArray();  
+        for(var i=0, iterationsSize=iterations.length; i<iterationsSize; i++) {
+          var iteration = iterations[i];
+          arr = itersort_bubblesort(arr, i);      
+          assertArrayEquals(iteration, arr);
+      	}
       }
+
       function testValidInsertionSort() {
         // TODO fill in test
+        var iterations = [
+        	[5,13,17,19,23,29,47,53,71,73,91]
+			//[1,9,15,17,24,42,47,73,87,104,105]
+        ]; 
+        var arr = generateStandardArray();      
+		arr = itersort_insertionsort(arr);      
+        assertArrayEquals(iterations[0], arr);
       }
+      
       function testValidRadixSort() {
         var iterations = [
           [1, 42, 73, 104, 24, 15, 105, 17, 87, 47, 9],
@@ -38,6 +57,7 @@
           assertArrayEquals(iteration, arr);
         }
       }
+      
     </script>
   </head>
   <body>
