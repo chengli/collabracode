@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>jQuery Menu</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+		<script type="text/javascript">	
+			$(function(){
+				var secondDown = $('#2ndlevel');
+				var thirdDown = $('#3rdlevel');
+				$('#2ndlevel').hide();
+				$('#1stlevel').bind('click', function(){
+					if($('#2ndlevel').is(':visible')){
+						secondDown.hide();						
+					}
+					else{
+						secondDown.show(300);
+						thirdDown.hide();						
+					}
+				});
+				$('#2ndlevel').bind('click', function(){
+					thirdDown.show(300);
+				})
+				//console.log($('ul li'));
+			});
+		</script>
+	</head>
+	<body>
+		<ul id="1stlevel">
+			<li class="1stlevel">First Level item1</li>
+			<li class="1stlevel">First Level item2
+				<ul id="2ndlevel">
+					<li class="2ndlevel">Second level item1</li>			
+					<li class="2ndlevel">Second Level item2				
+						<ul id="3rdlevel">
+							<li class="3rdlevel">Third Level item1</li>
+							<li class="3rdlevel">Third Level item2</li>
+							<li class="3rdlevel">Third Level item3</li>						
+						</ul>	
+					</li>
+					<li class="2ndlevel">Second Level item3</li>
+				</ul>
+			</li>
+			<li class="1stlevel">First Level item3</li>
+		</ul>
+		
+	</body>
+	
+</html>
