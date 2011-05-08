@@ -108,10 +108,12 @@
 				// Draw ball
 				ctx.clearRect(0,0,width,height);
 				ctx.beginPath();
-				ctx.arc(ball.position.x, ball.position.y, ball.radius, 0, Math.PI*2, true);				
+				
+				// draw the ball
+				ctx.arc(ball.position.x, ball.position.y, ball.radius, 0, Math.PI*2, true);
+				
 				ctx.fill();
 				ctx.closePath();
-
 				if(mouse.isDown){
 					ctx.beginPath();
 					ctx.moveTo(ball.position.x, ball.position.y);
