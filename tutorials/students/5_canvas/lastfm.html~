@@ -29,9 +29,7 @@
 	    }
 	    
 	    $(function(){
-		var canvas = document.getElementById('tutorial');
-		//console.log(canvas);
-		var ctx = canvas.getContext('2d');	
+		var ctx = document.getElementById('tutorial').getContext('2d');	
 		//ctx.fillStyle = "red";
 		
 		var img = new Image();		
